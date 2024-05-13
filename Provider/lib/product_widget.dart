@@ -34,7 +34,7 @@ class ItemWidget extends StatelessWidget {
               width: 100,
               height: 100, 
               child: Image.network(
-                product.image, 
+                product.imageUrl, 
               ),
             ),
             const SizedBox(
@@ -43,7 +43,7 @@ class ItemWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
-                product.title,
+                product.nama,
                 maxLines: 2,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
@@ -56,9 +56,9 @@ class ItemWidget extends StatelessWidget {
               height: 4,
             ),
             Text(
-              'USD ${product.price}',
+              'Rp ${product.harga}',
               style: const TextStyle(
-                color: Color.fromARGB(255, 1, 101, 255),
+                color: Color.fromARGB(255, 255,158,181),
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),

@@ -35,9 +35,9 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
   appBar: AppBar(
     elevation: 1,
-    backgroundColor: Color.fromARGB(255, 1, 101, 255),
+    backgroundColor: Color.fromARGB(255,255,133,162),
     title: const Text(
-      'OStore',
+      'LStore',
       style: TextStyle(color: Colors.black),
     ),
     actions: [

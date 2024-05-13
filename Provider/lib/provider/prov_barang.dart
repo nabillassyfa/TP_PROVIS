@@ -12,7 +12,7 @@ class ProductProvider extends ChangeNotifier {
     notifyListeners();
 
     final response = await http.get(Uri.parse(
-        'https://fakestoreapi.com/products'));
+        'http://127.0.0.1:8000/daftar_produk'));
 
     _products = productFromJson(response.body);
     isLoading = false;

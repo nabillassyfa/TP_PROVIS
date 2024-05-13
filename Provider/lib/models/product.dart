@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 List<Product> productFromJson(String str) =>
-    List<Product>.from(json.decode(str).map((x) => Product.fromJson(x)));
+    List<Product>.from(json.decode(str)['data'].map((x) => Product.fromJson(x)));
 
 String productToJson(List<Product> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -9,59 +9,45 @@ String productToJson(List<Product> data) =>
 class Product {
   Product({
     required this.id,
-    required this.title,
-    required this.price,
-    required this.description,
-    required this.category,
-    required this.image,
+    required this.nama,
+    required this.deskripsi,
+    required this.kategori,
+    required this.img,
+    required this.harga,
     required this.rating,
+    required this.penjualan,
   });
 
-  final int id;
-  final String title;
-  final double price;
-  final String description;
-  final String category;
-  final String image;
-  final Rating rating;
+  final String id;
+  final String nama;
+  final String deskripsi;
+  final String kategori;
+  final String img;
+  final String harga;
+  final double rating;
+  final int penjualan;
+
+  String get imageUrl => 'http://127.0.0.1:8000/produk_image/$id';
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json["id"],
-        title: json["title"],
-        price: json["price"].toDouble(),
-        description: json["description"],
-        category: json["category"],
-        image: json["image"],
-        rating: Rating.fromJson(json["rating"]),
+        nama: json["nama"],
+        deskripsi: json["deskripsi"],
+        kategori: json["kategori"],
+        img: json["img"],
+        harga: json["harga"],
+        rating: json["rating"].toDouble(),
+        penjualan: json["penjualan"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "title": title,
-        "price": price,
-        "description": description,
-        "category": category,
-        "image": image,
-        "rating": rating.toJson(),
-      };
-}
-
-class Rating {
-  Rating({
-    required this.rate,
-    required this.count,
-  });
-
-  final double rate;
-  final int count;
-
-  factory Rating.fromJson(Map<String, dynamic> json) => Rating(
-        rate: json['rate'].toDouble(),
-        count: json["count"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "rate": rate,
-        "count": count,
+        "nama": nama,
+        "deskripsi": deskripsi,
+        "kategori": kategori,
+        "img": img,
+        "harga": harga,
+        "rating": rating,
+        "penjualan": penjualan,
       };
 }

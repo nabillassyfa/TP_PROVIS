@@ -4,5 +4,5 @@
 
 ## Dokumentasi
 ### Provider
-![provider](https://github.com/nabillassyfa/TP_PROVIS/blob/main/Dokumentasi/provider.png)
-![provider](https://github.com/nabillassyfa/TP_PROVIS/blob/main/Dokumentasi/Prov_detail.png)
+![provider](Dokumentasi/Provider.png)
+![provider](Dokumentasi/Prov_detail.png)

@@ -18,7 +18,7 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255,255,158,181),
         elevation: 1,
         leading: IconButton(
           icon: const Icon(
@@ -53,7 +53,7 @@ class _ProductDetailState extends State<ProductDetail> {
               height: MediaQuery.of(context).size.height * 0.3,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(widget.product.image),
+                  image: NetworkImage(widget.product.imageUrl),
                   fit: BoxFit.contain,
                 ),
               ),
@@ -61,25 +61,25 @@ class _ProductDetailState extends State<ProductDetail> {
           ),
           const SizedBox(height: 10.0),
           Text(
-            widget.product.title,
+            widget.product.nama,
             maxLines: 2,
             style: const TextStyle(
-              fontSize: 25,
+              fontSize: 20,
               fontWeight: FontWeight.w700,
             ),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 10,),
           Container(
-            color: Color.fromARGB(255, 179, 222, 233),
+            color: Color.fromARGB(255, 255,235,239),
             padding: const EdgeInsets.only(left: 20),
             child: Row(
               children: [
                 Text(
-                  'USD ${widget.product.price}',
+                  'Rp ${widget.product.harga}',
                   style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -88,7 +88,7 @@ class _ProductDetailState extends State<ProductDetail> {
           ),
           SizedBox(height: 5,),
           Container(
-            color: Color.fromARGB(255, 179, 222, 233),
+            color: Color.fromARGB(255, 255,235,239),
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,11 +98,11 @@ class _ProductDetailState extends State<ProductDetail> {
                     for (int i = 0; i < 5; i++)
                       Icon(
                         Icons.star,
-                        color: i < widget.product.rating.rate ? Colors.yellow : Colors.grey,
+                        color: i < widget.product.rating ? Colors.yellow : Colors.grey,
                       ),
                     const SizedBox(width: 8),
                     Text(
-                      widget.product.rating.rate.toStringAsFixed(1),
+                      widget.product.rating.toStringAsFixed(1),
                       style: const TextStyle(
                         fontSize: 16,
                       ),
@@ -110,11 +110,11 @@ class _ProductDetailState extends State<ProductDetail> {
                   ],
                 ),
                 Text(
-                  'Sold ${widget.product.rating.count}',
+                  widget.product.penjualan.toString() + ' Terjual',
                   style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
                   ),
                 ),
               ],
@@ -124,13 +124,13 @@ class _ProductDetailState extends State<ProductDetail> {
           Expanded(
             child: SingleChildScrollView(
               child: Container(
-                color: Color.fromARGB(255, 179, 222, 233),
+                color: Color.fromARGB(255, 255,235,239),
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Description",
+                      "Deskripsi",
                       style: const TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -139,7 +139,7 @@ class _ProductDetailState extends State<ProductDetail> {
                     ),
                     SizedBox(height: 5,),
                     Text(
-                      widget.product.description,
+                      widget.product.deskripsi,
                       style: const TextStyle(
                         color: Colors.black,
                         fontSize: 12,
@@ -155,7 +155,7 @@ class _ProductDetailState extends State<ProductDetail> {
             
             padding: const EdgeInsets.symmetric(horizontal: 20),
             alignment: Alignment.bottomCenter,
-            color: Colors.white,
+            color: Color.fromARGB(255, 255,235,239),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -165,13 +165,13 @@ class _ProductDetailState extends State<ProductDetail> {
                     children: [
                       Icon(
                         Icons.shopping_cart_outlined,
-                        color: Color.fromARGB(255, 1, 101, 255),
+                        color: Color.fromARGB(255, 255,133,162),
                         size: 30,
                       ),
                       Text(
                         "add to cart",
                         style: const TextStyle(
-                            color: Color.fromARGB(255, 1, 101, 255),
+                            color: Color.fromARGB(255, 255,133,162),
                             fontSize: 12,
                             fontWeight: FontWeight.w700),
                       ),
@@ -186,10 +186,10 @@ class _ProductDetailState extends State<ProductDetail> {
                         borderRadius: BorderRadius.all(
                           Radius.circular(25),
                         ),
-                        color: Color.fromARGB(255, 1, 101, 255)),
+                        color: Color.fromARGB(255, 255,133,162)),
                     child: const Center(
                       child: Text(
-                        "Buy",
+                        "Beli",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
