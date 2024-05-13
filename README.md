@@ -4,5 +4,5 @@
 
 ## Dokumentasi
 ### Provider
-![provider](Dokumentasi/Provider.png)
+![provider](Dokumentasi/provider.png)
 ![provider](Dokumentasi/Prov_detail.png)
